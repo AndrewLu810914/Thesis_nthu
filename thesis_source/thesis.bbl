@@ -1,0 +1,42 @@
+\begin{thebibliography}{1}
+
+\bibitem{Pinto:2011:MSB}
+T.~Pinto, A.~Rebelo, G.~Giraldi, and J.~S. Cardoso, ``Music score binarization
+  based on domain knowledge,'' {\em Pattern Recognition and Image Analysis -
+  5th Iberian Conf. (IbPRIA)}, pp.~700--708, 2011.
+
+\bibitem{Otsu:1979:ATSMfGLH}
+O.~Nobuyuki, ``A threshold selection method from gray-level histograms,'' {\em
+  IEEE Trans. Systems, Man and Cybernetics}, vol.~9, pp.~62--66, 1979.
+
+\bibitem{Chen:2008:ADTIBMboED}
+Q.~Chen, Q.-s. Sun, P.~A. Heng, and D.-s. Xia, ``A double-threshold image
+  binarization method based on edge detector,'' {\em Pattern Recognition},
+  vol.~41, pp.~1254--1267, 2008.
+
+\bibitem{Huang:1995:ITbMtMoF}
+L.-K. Huang and M.-J.~J. Wang, ``Image thresholding by minimizing the measures
+  of fuzziness,'' {\em Pattern Recognition}, vol.~28, pp.~41--51, 1995.
+
+\bibitem{Tsai:1995:AFTSPfMaUH}
+D.-M. Tsai, ``A fast thresholding selection procedure for multimodal and
+  unimodal histograms,'' {\em Pattern Recognition Letters}, vol.~16,
+  pp.~653--666, 1995.
+
+\bibitem{Bernsen:2005:DToGLI}
+J.~Bernsen, ``Dynamic thresholding of grey-level images,'' in {\em Proc. the
+  8th. Int. IEEE Conf. CAD Systems in Microelectronics (CADSM)},
+  pp.~1254--1267, 2005.
+
+\bibitem{Dalitz:2008:CSoSRA}
+C.~Dalitz, M.~Droettboom, B.~Pranzas, and I.~Fujinaga, ``A comparative study of
+  staff removal algorithms,'' {\em IEEE Trans. Pattern Analysis and Machine
+  Intelligence}, vol.~30, pp.~753--766, 2008.
+
+\bibitem{Forns:2012:CVC-MUSCIMA}
+A.~Forns, A.~Dutta, A.~Gordo, and J.~Llads, ``Cvc-muscima: A ground-truth of
+  handwritten music score images for writer identification and staff removal,''
+  {\em Int. J. on Document Analysis and Recognition}, vol.~15, pp.~243--251,
+  2012.
+
+\end{thebibliography}
