@@ -67,8 +67,7 @@
     \vspace{\fill}
     \begin{flushleft}
       \fontsize{20}{30}\selectfont
-      \textbf{系所別：\underline{{\@institutezh\@typezh}班}
-      \hspace{\fill}組別：\underline{\@divisionzh 組}}\\
+      \textbf{系所別：\underline{{\@institutezh\@typezh}班}}\\
       \textbf{學號姓名：\underline{\@studentid \@authorzh} (\@authoren)}\\
       \textbf{指導教授：\underline{\@advisorzh\hspace{.3cm}博士} (Prof. \@advisoren)}
     \end{flushleft}
