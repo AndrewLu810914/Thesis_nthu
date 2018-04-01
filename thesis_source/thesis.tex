@@ -52,19 +52,26 @@
 \makecover
 \makecopyright
 
-% \input{abstract}
-% \input{acknowledgements}
+
+\input{acknowledgements}
+\input{abstract}
+
 
 {\singlespacing
 \tableofcontents
+\listoffigures
+\listoftables
 }
 
 \mainmatter
+% Your thesis goes here
 \input{introduction}
-\input{system-overview}
-% \input{discussion}
+% \input{omr-overview}
+\input{discussion}
 % \input{conclusion}
+
 \appendix
+
 \backmatter
 
 \renewcommand{\bibname}{References}
@@ -73,8 +80,6 @@
 
 % Your bibliography goes here
 {\singlespacing
-\listoffigures
-\listoftables
 \bibliography{thesis}
 }
 
