@@ -1,0 +1,137 @@
+outline
+
+自動化光學檢測系統的設計、檢測方法改良與其在LED背光鍵盤上的應用
+
+Abstract
+	Pending
+
+概要  (introduction)
+	研究背景
+		舊有的系統介紹
+			單鏡頭，工業相機
+			舊的系統沒有對齊
+				(找document)
+			舊的比對方法
+				先根據亮度二值化再取xor (Abs Difference)
+
+		舊系統的缺點分析
+			只能偵測刻字的瑕疵，無法判斷顏色(檢測演算法)
+無法檢測LED鍵盤的燈色
+	增加功能(color detection using HSV filter)
+		舊的檢測治具對細小瑕疵不夠敏感
+改為多相機，拉近距離解決細節問題(alignment method)
+			Align的方法在刻字比較細的鍵盤上表現不好
+改善alignment  (surf based alignment & button centroid feature alignment)
+
+	研究目的
+		改良舊有的檢測治具
+			治具從單鏡頭改為多鏡頭
+		開發對應的檢測方法
+			Retrieve Frame
+			Alignment sample & gold image
+改良過的比對方法
+	Convert to grayscale image
+	Do absDiff on grayscale image, store to defect image
+	Do blob detection on defect image
+	If find any defect blobs, return false, else return true.
+標示瑕疵與紀錄
+	Mark defects found in previous step
+	研究結果 
+		可利用的限制條件介紹
+			治具可以將鍵盤的位移控制在一定範圍
+				最臨近中心特徵點配對 (compare to FLANN method)
+U-surf to find feature points
+Matching feature points with nearest neighbor problem (use Locality sensitive hashing methods to speed up)
+RANSAC method to find homography matrix
+			相機的位置與距離是固定的，焦距可以設為固定值	
+			
+		本研究改進之處(Problems Solved)
+			Minimized the effect of rotation & translation of sample image.
+			Lower cost & more flexibility.
+		比較舊有的系統與新系統 (steps)
+Input images
+Alignment
+Feature point extraction
+Feature Point matching
+Find Homography Matrix
+Compare Aligned images
+Abs of difference
+
+
+		各種演算法的比較
+Feature points & Feature points extraction methods
+sift surf brisk orb freak … (https://wwwpub.zih.tu-dresden.de/~cvweb/teaching/Courses/WS_2014_15/HS/UpdateOnFeatures_StefanHaller.pdf)
+Button Centroid Feature (simplified feature point based on blob detection)
+Point matching methods
+KNN….  (nearest neighbors)
+FLANN…... (estimation of nearest neighbors)
+Homography matrix finding
+RANSAC-based robust method
+Least-Median robust method
+
+相關研究 (Related/Previous Work)
+	改良前的系統與檢測演算法
+		設計架構與缺點(單鏡頭工業相機)
+			Problems on Cost & Performance
+			Problems on Field of View >> solved with multiple camera
+			Problems on Optical Distortion(?)
+			Problems on Algorithms (Sensitivity & Misjudge Issue)
+			
+	相關研究與方法
+		Basic Image Processing Operations
+			Color Space
+			Geometric Transformations Methods
+
+		Defect Detection researches
+		Object Detection problems
+			Thresholding
+			Blob Detection & Contour Detection
+			SIFT、SURF.....
+		Feature Point Detection (Buttlenect)
+			SIFT & SURF feature point detection is robust, but slow
+		Point Pattern Matching Problems
+			RANSAC
+			Stable Matching Problems
+			Application on fingerprint Alignment
+
+		Image Similarity Measures
+			Find stamp on box.
+		
+新的設計與檢測方法 (System Overviews)
+methods & terminology
+	Opencv
+		Algorithms we used
+		
+	
+	硬體架構
+		多鏡頭治具簡介
+		相機支架 & 鍵盤架(?)
+	軟體架構
+		整體架構
+		各部分的功能
+		檢測流程 (Introduce different modes)
+			Learning from Gold Image (檢查用字)
+			Compare Sample & Gold image
+	
+	比較與優缺點分析
+		實驗設計
+			Compare each algorithm with different resolution setup & camera setup under production site standard with/without gpu deployed
+	與舊的系統和其他演算法設定比較 (compare performance with different alignment methods)
+		
+其他應用?
+	產品包裝檢測(貼紙標籤)
+		Application of Object Detection Methods
+	RANSAC 的瓶頸
+		在大畫面中搜尋小物件時容易出現不一致的結果
+	
+可改進項目
+	相機控制?
+		受限於製造商與相機硬體
+	演算法
+		Speed & Robustness
+	GPU was not utilized in this project
+		This system could have both robustness & speed
+Reference
+	待補充
+
+

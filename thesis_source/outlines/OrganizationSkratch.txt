@@ -1,0 +1,35 @@
+Cahpter 1 Introduction
+
+	Motivation
+
+	Goal
+
+	Organization (OF THIS PAPER)
+
+Chapter 2 Preliminaries
+
+	Related Works
+		AN UPDATE ON FEATURES SURF, BRISK, ORB and FREAK (https://wwwpub.zih.tu-dresden.de/~cvweb/teaching/Courses/WS_2014_15/HS/UpdateOnFeatures_StefanHaller.pdf)
+		
+	Previous Solution
+		// see reference data
+
+Chapter 3 Methods
+	
+	Learning Stage
+		Load Reference Images from Camera or File
+		Capturing Feature Points or Ohter Infomations From the Image
+		Store Those Infomation For Examining Stage
+
+	Examining Stage
+		Load Sample Images from Camera
+		Capturing Feature Points or Ohter Infomations From the Image
+		Matching Feature Points with Reference Image to find Homography Matrix
+		Apply Defect Detection Methods
+
+Chapter 4 Comparision Between Other Methods
+
+	Different Feature Point Extration Methods
+
+
+Chapter 5 Conclusion & Future Works
