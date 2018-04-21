@@ -12,7 +12,10 @@ Chapter 2 Preliminaries
 		AN UPDATE ON FEATURES SURF, BRISK, ORB and FREAK (https://wwwpub.zih.tu-dresden.de/~cvweb/teaching/Courses/WS_2014_15/HS/UpdateOnFeatures_StefanHaller.pdf)
 		
 	Previous Solution
-		// see reference data
+		// see reference
+
+	Inspection Platform Structure
+		// simple introductino to the platform.
 
 Chapter 3 Methods
 	
@@ -30,6 +33,20 @@ Chapter 3 Methods
 Chapter 4 Comparision Between Other Methods
 
 	Different Feature Point Extration Methods
+		SIFT
+		SURF
+		BRISK
+		ORB
+		FREAK
+
+	Comparithen between each methods
+		Create a chart or cost table for each feature extraction methods, 
+		leave some comment on the methods. (pros & cons ...)
 
 
 Chapter 5 Conclusion & Future Works
+	Conclusion
+	Future Works
+		Multicamera controls optimizatin
+		GPU is not utilized in this project
+		Smarter Algorithm
