@@ -7,6 +7,7 @@ Cahpter 1 Introduction
 	Organization (OF THIS PAPER)
 
 Chapter 2 Preliminaries
+	Common Image Processing Techniques
 
 	Related Works
 		AN UPDATE ON FEATURES SURF, BRISK, ORB and FREAK (https://wwwpub.zih.tu-dresden.de/~cvweb/teaching/Courses/WS_2014_15/HS/UpdateOnFeatures_StefanHaller.pdf)
