@@ -1,46 +1,110 @@
 \chapter{Preliminaries}
 \label{c:preliminaries}
-
-In this section, previous works of OMR are mentioned. Preprocessing (binarization, staff profiling, staff detection, and staff removal) and recognition (symbol segmentation, symbol classification) are included. 
+In this section, common techniques of object detection are mentioned. Preprocessing (thresholding, color model transformation,blob detection) and recognition (feature point detection, and matching) are included. 
 
 \section{Common Image Processing Techniques}
-\section{Related Works}
+
+    \subsection{Color Models}
+        In this thesis, two color model were utilized to do the lettering defect detection and LED color \& function inspection.
+        There is many different ways to describe colors in image processing.
+        \subsubsection{RGB Color Model}
+            The color model that most people known was 8 bits RBG color model.
+            Which use 8 bits for each channel, could describe 256 X 256 X 256 colors.
+            The idea of RGB color space is to separate colors to three primary color that human eyes could sense from light reflected from an object.
+            By summing up three different color channel, we could simulate different colors in nature.
+            Common used in color LED control and describing the color of a pixel.
+            This color model is also the model used to describe raw image captured from camera we used.
+        \subsubsection{Gray-scale}
+            The color model we used to do lettering defect detection was 8 bit gray-scale color model, this color model could help us in production line to simply parameter setups.
+            Also, gray-scale color model performs better then RGB to HSV color model when doing the lettering defect detecting.
+            The conversion method from RGB color model to gray-scale color model built in OpenCV is described as below.
+            % https://docs.opencv.org/3.1.0/de/d25/imgproc_color_conversions.html
+            \begin{center}
+            $Y = 0.299 \times R + 0.587 \times G + 0.114 \times B $
+            \end{center}
+
+            Here is an example conversion result
+        \subsubsection{HSV Color Model}
+            The other color model we used was HSV color model, an alternative of RGB color model, this color model describe colors in different way of RGB color model.
+            HSV color model use Hue, Saturation and Value to describe different colors.
+            This color space could describe different color in a more intuitive way.
+            Hue stands for the color tone of a pixel. % find formal definition
+            Saturation stands for how dense the color is. The more pure pixel color is, the higher value saturation will have.
+            Value is used to describe how bright the pixel is. The brighter, the higher.
+            The conversion method from RGB color model to HSV color model built in OpenCV is described as below.
+
+            $$
+                V = \max(R,G,B)
+            $$\\
+            $$
+                S = 
+                \begin{cases}
+                    {{{(V-min(R,G,B))}/{V}}, \enspace\textrm{if}\enspace V \neq 0}\\
+                    {0, otherwise}
+                \end{cases}
+            $$\\
+            $$
+                H =
+                \begin{cases} 
+                    {{60(G - B)}/{(V-min(R,G,B))}, \enspace\textrm{if}\enspace V=R}\\
+                    {{120+60(B - R)}/{(V-min(R,G,B))}, \enspace\textrm{if}\enspace V=G}\\
+                    {{240+60(R - G)}/{(V-min(R,G,B))}, \enspace\textrm{if}\enspace V=B}
+                \end{cases}
+            $$\\
+            
+            $$
+                \textrm{If} \enspace H \enspace < \enspace 0 \textrm{, then } H = H + 360. \textrm{ On output } 0 \leq V \leq 1, 0 \leq S \leq 1, 0 \leq H \leq 360
+            $$
+
+    \subsection{Thresholding \& Binarization}
+        Thresholding with different color model can help us select interested pixels in an efficient way.
+        In this thesis, we used this idea to identify where the keyboard buttons are located by doing thresholding to the gray scale image.
+        By set a threshold value between 0 \& 255, we can get a binarized image.
+        After apply blob or contour detection methods to that  binarized image.
+        When thresholding with HSV upper bounds \& lower bounds, we can identify pixels with certain color or brightness.
+        By HSV thresholding, we can identify keys with different color lightening.
+        Witch is efficient for us to check if the LED back-light is malfunction.
+        % add object detection, color detection, shape detection methods.
+
+    \subsection{Blob Detection}
+        % https://www.learnopencv.com/blob-detection-using-opencv-python-c/
+        A blob is a group of connected pixels in an image that share some common property (e.g. gray-scale value, HSV value, RGB value, shapes, area, etc).
+        The goal of blob detection method is to identify and mark these pixels in the given image.
+        In this thesis, after we applied thresholding technique and defect detecting methods to the keyboard image captured from camera and get the corresponding binary image.
+        We apply blob detection to that binary image then get the key position, LED color and defect information from it.
+        % add blob detection example image.
+
+    \subsection{Feature Point Detection}
+        Feature point detection technique is widely used in object detection or tracking applications.
+        Popular methods like SIFT feature points having the current state of the art accuracy, but its slow on execution.
+        SURF is an improve based on SIFT feature point. SURF is much faster then SIFT without sacrificing much robustness. But still takes some time when dealing with large sized image. 
+        However, by restricting the area of interested with correct parameter setting, SURF feature point could be utilized in our project without issue.
+        Other feature point detecting methods like FAST, ORB and FREAK will also be discussed in Chapter 4.
+
+\section{Related Works} 
+    % this part needs more works to do later.
+    % each subsection needs more information.
+    This section will introduce where the main concept of each component comes from.
+    \subsection{PCB defect detection}
+        % https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5530052
+        % defect detecting method referenced from this work.
+        Putera et al., (2010) proposed a computer vision inspection system implemented with MATLAB.
+        The idea of updated defect detection method for keyboard lettering is from this work.
+
+    \subsection{Computer-Vision-Based Fabric Defect Detection}
+        % https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=4418522
+        % where multiple camera idea from
+        Kumar et al.,(2008)\cite{kumar2008computer} gives a design of CV based inspection platform for fabric defect detecting.
+        We applied the idea connect multiple camera to one host machine in this thesis.
+
+    \subsection{Image Alignment}
+        % https://www.learnopencv.com/image-alignment-feature-based-using-opencv-c-python/
+        % https://www.learnopencv.com/image-alignment-ecc-in-opencv-c-python/
+        On the website owned by Satya Mallick, he showed two different way to do the image alignment.
+        One is by enhanced correlation coefficient (ECC) \cite{ECC_Alignment}, the other is based on feature point matching \cite{featureBasedAlignment}.
+
 \section{Previous Solution}
-\section{Inspection Platform Structure}
-
-% In recognition of printed scores, the color information, namely R/G/B or R/G/B/A vectors, is not useful. Instead, only the intensity information is considered for recognition, so gray-scaled images are always used as the raw input. Furthermore, people always determine if each pixel is background (white) or foreground (black) in advance, and hence the binarization is included in most applications of OMR.
-
-% In Pinto's research~\cite{Pinto:2011:MSB}, two kinds of binarization methods were introduced depending on whether the binarization threshold is locally adjustable. The simplest way is applying a constant threshold to all pixels in the image, which is called \emph{global thresholding}. The global threshold can be obtained by finding a value that maximizes the variance~\cite{Otsu:1979:ATSMfGLH} between foreground and background pixels, preserves the most edge information~\cite{Chen:2008:ADTIBMboED}, or maximizes the similarity between the binarized image and the original image~\cite{Huang:1995:ITbMtMoF,Tsai:1995:AFTSPfMaUH}. However, it cannot be expected that the intensity in different small regions is constant over the document, and a constant threshold might not work at a different intensity level. In particular, near the boundary of a page in a book, the image might show a gradient-like difference in terms of the average intensity as compared to the region far from the book spine (Fig.~\ref{fig:bookspine}). To deal with such situations, the choice of the threshold should be determined by local information (nearby pixels)~\cite{Bernsen:2005:DToGLI}, which is called \emph{local thresholding}. In general, global thresholding is easier to be implemented, while local thresholding is more adaptive and robust.
-
-% \begin{figure}[ht]
-%     \includegraphics[width=\textwidth]{bookspine}
-%     \caption{Example of the gray-scale image near the book spine\label{fig:bookspine}.}
-% \end{figure}
-
-% \section{Staff Detection and Removal}
-
-% Dalitz et al.~\cite{Dalitz:2008:CSoSRA} introduced a systematic way for testing the staff removal algorithms. A dataset was generated from a set of ideal score images with the deformation methods listed in Table.~\ref{table:deformation}. The deformation algorithms and the CVC-MUSCIMA dataset are made openly available by Forns et al.~\cite{Forns:2012:CVC-MUSCIMA}.
-
-% \begin{table}[ht]
-%     \hspace{-.5in}
-%     \begin{tabular}{|c|c|c|}
-%         \hline
-%         {\bf Deformation} & {\bf Type} & {\bf Parameter Description} \\
-%         \hline
-%         Curvature & deterministic & height/width ratio of sine curve \\
-%         \hline
-%         Typeset Emulation & both & \parbox[c]{9cm}{gap width, maximal height and variance of vertical shift} \\
-%         \hline
-%         Line Interruptions & random & \parbox[c]{9cm}{interruption frequency, maximal width and variance of gap width} \\
-%         \hline
-%         Thickness Variation & random & \parbox[c]{9cm}{Markov chain stationary distribution and inertia factor} \\
-%         \hline
-%         $y$-variation & random & \parbox[c]{9cm}{Markov chain stationary distribution and inertia factor} \\
-%         % \hline
-%         % Degradation & random & \parbox[c]{9cm}{emulating local distortions suggested by Kanungo et al.~\cite{Kanungo:2000:Degradation}} \\
-%         \hline
-%         White Speckles & random & \parbox[c]{9cm}{speckle frequency, random walk length and smoothing factor} \\
-%         \hline
-%     \end{tabular}
-%     \caption{Deformation Methods\label{table:deformation}.}
-% \end{table}
+    % give more detailed introduction on previous solution.
+    Previous solution applied SURF feature point on every ROI that represented a key, and we found that feature point based method have accuracy issue on small target searching at production line.
+    Also, the lettering defect detecting method is not sensitive enough to deal with small defect.
+    In this thesis, we'll focus on how to correct these problems.

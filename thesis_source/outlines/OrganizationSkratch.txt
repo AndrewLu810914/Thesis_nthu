@@ -34,7 +34,7 @@ Chapter 3 Methods
 Chapter 4 Comparision Between Other Methods
 
 	Different Feature Point Extration Methods
-		SIFT
+		SIFT`
 		SURF
 		BRISK
 		ORB

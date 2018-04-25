@@ -38,8 +38,8 @@
 \setCJKmainfont[AutoFakeBold=3,AutoFakeSlant=.4]{Kaiti TC}
 \defaultCJKfontfeatures{AutoFakeBold=6,AutoFakeSlant=.4}
 
-\ifdefined\withwatermark
-  \CenterWallPaper{0.5}{watermark.pdf}
+\if defined\withwatermark
+\CenterWallPaper{0.5}{watermark.pdf}
 \fi
 
 % Your information goes here
@@ -52,12 +52,12 @@
 \makecover
 \makecopyright
 
-
 \input{acknowledgements}
 \input{abstract}
 
-
-{\singlespacing
+\setcounter{tocdepth}{1}
+{
+\singlespacing
 \tableofcontents
 \listoffigures
 \listoftables

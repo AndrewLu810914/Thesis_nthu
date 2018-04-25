@@ -1,15 +1,57 @@
 \chapter{Methods}
 \label{c:methods}
 
-\section{Work Flows Intorduction}
+\section{Inspection Platform Structure}
+Refer to Kumar's work \cite{kumar2008computer}, we designed a scalable platform could install multiple cameras. Use one PC as host machine to collect images from camera array.
+After retrieved images from camera, the defect detection methods (Lettering Defect Detection \& LED Color inspection) described below will inspect wheather the keyboard has any defect on it. 
 
-\section{Learning Stage}
-\subsection{Load Reference Images from Camera or File}
-\subsection{Capturing Feature Points or Ohter Infomations From the Image}
-\subsection{Store Those Infomation For Examining Stage}
+\section{Lettering Defect Detection Work Flow Intorduction}
+\label{letteringDetection}
+	In this part, lettering defect method will be explained in detail.
+	\subsection{Lattering Passing Standard Learning Stage} 
+		Lettering defect detection can be saperated into two main part.
+		The first part is learning stage. This part reads the gold image from file and doing the feature point detection, and store the feature points \& their descriptor for examining stage use.
 
-\section{Examining Stage}
-\subsection{Load Sample Images from Camera}
-\subsection{Capturing Feature Points or Ohter Infomations From the Image}
-\subsection{Matching Feature Points with Reference Image to find Homography Matrix}
-\subsection{Apply Defect Detection Methods}
+		% \subsubsection{Load Reference Images from Camera or File}
+		% \subsubsection{Load Setting File}
+		% \subsubsection{Capturing Feature Points or Ohter Infomations From the Image}
+		% \subsubsection{Store Passing Standard For Examining Stage}
+
+	\subsection{Lattering Examining Stage}
+		In lattering examing stage, we did same steps on the keyboard sample image we want to imspect, doing the feature point detection and store the feature points \& their descriptor.
+		After having the feature point and descriptor from both gold \& keyboard sample image, we do the feature point matching to find the homography matrix then we can align sample image with gold image with geomatric transformantion. 
+		With both image aligned, we apply the defect detection method to aligned images, and get the marked defect information.
+		And judge the sample keyboard is a defected on or a good one.
+
+		% \subsubsection{Load Sample Images from Camera}
+		% \subsubsection{Load Setting File}
+		% \subsubsection{Capturing Feature Points or Ohter Infomations From the Image}
+		% \subsubsection{Matching Feature Points with Reference Image to find Homography Matrix}
+		% \subsubsection{Apply Defect Detection Methods}
+
+	\subsection{Defect Detection Method}
+		In lettering defect detection, after gray-scale gold \& smaple image aligned, we calculate absolute difference of two image, and get a new gray scale image, say $M_{Diff}$, that contained defects information.
+		To detect the defect, we could apply simple blob detection with soutable parameters to identify wheather a bright spot is defect or noise.
+
+\section{LED Function Inspection Work Flow Intorduction}
+	\subsection{LED Color Passing Standard Learning Stage}
+		In this stage, 
+		% \subsubsection{Load Reference Images from Camera or File}
+		% \subsubsection{Load Setting File}
+		% \subsubsection{Capturing LEDs Infomations From the Image}
+		% \subsubsection{Store Passing Standard For Examining Stage}
+
+	\subsection{LED Color Examining Stage}
+		% \subsubsection{Load Sample Images from Camera}
+		% \subsubsection{Load Setting File}
+		% \subsubsection{Capturing LEDs Infomations From the Image}
+		% \subsubsection{Apply Defect Detection Methods}
+
+
+\section{Other Functions Implemented}
+	\subsection{Stamp Detection}
+		Stamp detection is implemented after lattering defect detection is implemented.
+		Since the steps doing object detection and feature based image alignment are very similar.
+		We first applied feature point detect method on the stamp image and image that we want to inspect.
+		After applied point matching methods, we could find the posible area for the stamp.
+		Finally, we compare the similarity between the posible area, make sure that there is no misjudge on the inspection.

@@ -1,46 +1,45 @@
 \chapter{Introduction}
 \label{c:intro}
-In production line, the quality check process is the final and the most important step before the
-products roll out.  
-Having automatic inspection platform on the production line could speed up the production speed and reduce the chance that product with defect getting on the shelf. 
-Witch is important for all manufacturers.
-In this thesis, we will introduce an AOI platform based on OpenCV 3.3.1 \& EmguCV 2.4 special designed for self illuminated keyboard.
-And give a pros \& cons analysis for our case.
+	In production line, the quality check process is the final and the most important step before the
+	products roll out.  
+	Having automatic inspection platform on the production line could speed up the production speed and reduce the chance that product with defect getting on the shelf. 
+	Witch is important for all manufacturers.
+	In this thesis, we will introduce an AOI platform based on OpenCV 3.3.1 \& EmguCV 2.4 special designed for self illuminated keyboard.
+	And give a pros \& cons analysis for our case.
 
 
 \section{Motivation} \label{section:motivation} 
-Automatic Optical Inspection (AOI) technique is now widely use in modern production lines.
-With these techniques applied, cost spent on quality check \& chance of making mistake has significantly dropped.
-But the ready-made AOI solutions still cost much on license fee, take a lot of resource to running on production line.
-There is a demand to make an AOI platform special designed for our own need.
-Since the previous solution is obsoleted. It doesn't performs well on
-lettering defect detection and couldn't identify the color of LED back-light
-of the keyboard. In this thesis, we will introduce the construction and
-implementation of an AOI(Automatic Optics Inspection) system that is special
-designed to do the LED self illuminated keyboards.
+	Automatic Optical Inspection (AOI) technique is now widely use in modern production lines.
+	With these techniques applied, cost spent on quality check \& chance of making mistake has significantly dropped.
+	But the ready-made AOI solutions still cost much on license fee, take a lot of resource to running on production line.
+	There is a demand to make an AOI platform special designed for our own need.
+	Since the previous solution is obsoleted. It doesn't performs well on
+	lettering defect detection and couldn't identify the color of LED back-light
+	of the keyboard. In this thesis, we will introduce the construction and
+	implementation of an AOI(Automatic Optics Inspection) system that is special
+	designed to do the LED self illuminated keyboards.
 
 
 \section{Goal}
 \label{section:goal}
-Design an AOI(Automatic Optics Inspection) system is have ability to detect the \emph{lettering defect} and \emph{LED multifunction} from \emph{given image} or from \emph{camera}.
-Need to be \emph{accurate}, \emph{scalable} and both \emph{time \& cost effective} in order to meet the requirement of production line.
+	Design an AOI(Automatic Optics Inspection) system is have ability to detect the \emph{lettering defect} and \emph{LED multifunction} from \emph{given image} or from \emph{camera}.
+	Need to be \emph{accurate}, \emph{scalable} and both \emph{time \& cost effective} in order to meet the requirement of production line.
 
 \section{Organization}
 \label{section:organization}
-The organization of the paper is as follows. 
-In Chapter 2, we introduce some background knowledge related works, previous solution \& our testing platform structure.
-In Chapter 3, we will give a detailed description of our testing work-flows and inspection algorithm design.
-In Chapter 4, we will further introduce the difference on performance of each key points detection methods and their pros \& cons.
-Finally, we conclude this thesis in Chapter 5.
+	The organization of the paper is as follows. 
+	In Chapter 2, we introduce some background knowledge related works, previous solution \& our testing platform structure.
+	In Chapter 3, we will give a detailed description of our testing work-flows and inspection algorithm design.
+	In Chapter 4, we will further introduce the difference on performance of each key points detection methods and their pros \& cons.
+	Finally, we conclude this thesis in Chapter 5.
 
-\subsection{Main Contribution of This Dissertation}
-\label{subsec:advantages}
+	\subsection{Main Contribution of This Dissertation}
+	\label{subsec:advantages}
+		\subsubsection{Accuracy}
+			The accuracy issue of previous solution is now solved by updated alignment methods and defect detection methods.
 
-\subsubsection{Accuracy}
-The accuracy issue of previous solution is now solved by updated alignment methods and defect detection methods.
+		\subsubsection{Speed up}
+			After solved the accuracy issue, we find out the bottle neck of the Inspection work flow. Thus, by reduce the input area size, only focus on the area that worth time to do the inspection.
 
-\subsubsection{Speed up}
-After solved the accuracy issue, we find out the bottle neck of the inspection work flow. Thus, by reduce the input area size, only focus on the area that worth time to do the inspection.
-
-\subsubsection{Provide a updated baseline platform for later upgrade}
-This project provided a base model for future AOI tools development.
+		\subsubsection{Provide a updated baseline platform for later upgrade}
+			This project provided a base model for future AOI tools development.
