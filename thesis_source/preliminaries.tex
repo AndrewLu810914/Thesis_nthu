@@ -24,6 +24,7 @@ In this section, common techniques of object detection are mentioned. Preprocess
             \end{center}
 
             Here is an example conversion result
+            $$ \textrm{add example here} $$
         \subsubsection{HSV Color Model}
             The other color model we used was HSV color model, an alternative of RGB color model, this color model describe colors in different way of RGB color model.
             HSV color model use Hue, Saturation and Value to describe different colors.
@@ -46,15 +47,15 @@ In this section, common techniques of object detection are mentioned. Preprocess
             $$
                 H =
                 \begin{cases} 
-                    {{60(G - B)}/{(V-min(R,G,B))}, \enspace\textrm{if}\enspace V=R}\\
-                    {{120+60(B - R)}/{(V-min(R,G,B))}, \enspace\textrm{if}\enspace V=G}\\
-                    {{240+60(R - G)}/{(V-min(R,G,B))}, \enspace\textrm{if}\enspace V=B}
+                    {{60(G - B)}/{(V-\min(R,G,B))}, \enspace\textrm{if}\enspace V=R}\\
+                    {{120+60(B - R)}/{(V-\min(R,G,B))}, \enspace\textrm{if}\enspace V=G}\\
+                    {{240+60(R - G)}/{(V-\min(R,G,B))}, \enspace\textrm{if}\enspace V=B}
                 \end{cases}
-            $$\\
-            
+            $$\\   
             $$
                 \textrm{If} \enspace H \enspace < \enspace 0 \textrm{, then } H = H + 360. \textrm{ On output } 0 \leq V \leq 1, 0 \leq S \leq 1, 0 \leq H \leq 360
             $$
+            $$ \textrm{add HSV filtered example here} $$
 
     \subsection{Thresholding \& Binarization}
         Thresholding with different color model can help us select interested pixels in an efficient way.
@@ -65,6 +66,7 @@ In this section, common techniques of object detection are mentioned. Preprocess
         By HSV thresholding, we can identify keys with different color lightening.
         Witch is efficient for us to check if the LED back-light is malfunction.
         % add object detection, color detection, shape detection methods.
+        $$ \textrm{add example here} $$
 
     \subsection{Blob Detection}
         % https://www.learnopencv.com/blob-detection-using-opencv-python-c/
@@ -72,7 +74,7 @@ In this section, common techniques of object detection are mentioned. Preprocess
         The goal of blob detection method is to identify and mark these pixels in the given image.
         In this thesis, after we applied thresholding technique and defect detecting methods to the keyboard image captured from camera and get the corresponding binary image.
         We apply blob detection to that binary image then get the key position, LED color and defect information from it.
-        % add blob detection example image.
+        $$ \textrm{add example here} $$
 
     \subsection{Feature Point Detection}
         Feature point detection technique is widely used in object detection or tracking applications.
@@ -88,7 +90,7 @@ In this section, common techniques of object detection are mentioned. Preprocess
     \subsection{PCB defect detection}
         % https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=5530052
         % defect detecting method referenced from this work.
-        Putera et al., (2010) proposed a computer vision inspection system implemented with MATLAB.
+        Putera et al., \cite{putera2010printed} (2010) proposed a computer vision inspection system implemented with MATLAB.
         The idea of updated defect detection method for keyboard lettering is from this work.
 
     \subsection{Computer-Vision-Based Fabric Defect Detection}
