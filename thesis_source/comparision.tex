@@ -1,29 +1,44 @@
-\chapter{Comparision Between Other Mehtods}
+\chapter{Comparison Between Other Methods}
 \label{c:comparision}
 
-\section{Different Feature Point Extration \& Point Matching Methods}
+\section{Different Feature Point Extraction \& Point Matching Methods}
 	% test functions provides in opencv
 	% https://docs.opencv.org/3.3.1/d5/d51/group__features2d__main.html
-	In this section, we'll discuss how different feature point performs in keyboard defect detection snerio.
-	Since the bottleneck of this project is the feature point detection method, we tried some common methods, and below is the observation \& time comperison.
-	In Karamis work\cite{karami2017image}, they did the comparison
+	In this section, we'll discuss how different feature point performs in keyboard defect detection scenario.
+	Since the bottleneck of this project is the feature point detection method, we tried some common methods, and below is the observation \& time comparison between different approach.
+
 	\subsection{Simple Blob Detector}
 		\subsubsection{Introduction}
-
+			The blob detection is an simple approach for feature point detection. We choose the centroid of each selected blob as the feature point. Matching feature points with nearest neighborhood. 
+			Since we have a fixture that can guarantee the keyboard does not have shift or rotation more then a certain amount, we can assume that the feature point matched is the nearest one.
+		\subsubsection{Performance}
+			$$\textrm{Add time data}$$
 		\subsubsection{Pros \& Cons}
-		% \subsubsection{}
+			This method has lowest robustness, but fastest in execution.
+	
 	\subsection{SIFT}
 		\subsubsection{Introduction}
+		\subsubsection{Performance}
+			$$\textrm{Add time data}$$
 		\subsubsection{Pros \& Cons}
+	
 	\subsection{SURF}
 		\subsubsection{Introduction}
+		\subsubsection{Performance}
+			$$\textrm{Add time data}$$
 		\subsubsection{Pros \& Cons}
+	
 	\subsection{ORB}
 		\subsubsection{Introduction}
+		\subsubsection{Performance}
+			$$\textrm{Add time data}$$
 		\subsubsection{Pros \& Cons}
+	
 	\subsection{FREAK}
 		\subsubsection{Introduction}
+		\subsubsection{Performance}
+			$$\textrm{Add time data}$$
 		\subsubsection{Pros \& Cons}
 
-\section{Comparithen between each methods}
-\emph{creat a chart here}
+\section{Comparison between each methods}
+\emph{crest a chart here}
