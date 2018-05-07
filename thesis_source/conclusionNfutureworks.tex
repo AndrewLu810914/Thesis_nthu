@@ -2,9 +2,26 @@
 \label{c:conclusion-and-future-works}
 
 \section{Conclusions}
-	
+	In this thesis, we have discussed the performance bottleneck of the inspection methods and improved the inspection methods.
+	Thought the current implementation solved the performance issue of the previous solution, increased the accuracy and precision of the judgment.
+	The implementation doesn't consider the case of conventional keyboards, also doesn't optimized or parallel computing.
+	We will discuss about the future work in the following section.
+
 \section{Future Works}
 	\subsection{Ability To Inspect Non-illuminated Keyboards}
-	\subsection{Multicamera controls optimizatin}
-	\subsection{GPU is not utilized in this project}
+		For the key board lettering inspection method, since the current method cannot handle the shading that is too complex.
+
+	\subsection{Multi-camera and controls optimization}
+		The current version of implementation using the multi-camera in sequential order. Parallel processing techniques is not utilized into this project yet.
+		And every camera we using is now using a manual adjusted parameter setup. Witch means the system performance is highly depends on the experience of the user of the system.
+
+
+	\subsection{Parallel computing is not utilized in this project}
+		In this thesis, we didn't fully utilize the computation power of the host PC, only use the sequential processing technique in the current implementation to ensure the stability of the system.
+		The system may have an acceleration about the number of CPU cores in the ideal situation. 
+		Witch is a great improvement for the production line application.
+		And GPU is also a powerful tool witch we didn't introduce to this project since the budget issue.
+		With good implementation, GPU may make the real time inspection possible.
+	
 	\subsection{Smarter Algorithm}
+		In current implementation, we still need to setup up to ten parameters manually, 
