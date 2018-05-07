@@ -9,36 +9,40 @@
 
 	\subsection{Simple Blob Detector}
 		\subsubsection{Introduction}
-			The blob detection is an simple approach for feature point detection. We choose the centroid of each selected blob as the feature point. Matching feature points with nearest neighborhood. 
+			The blob feature detector is an simple approach for feature point detection. We choose the centroid of each selected blob as the feature point. Matching feature points with nearest neighborhood. 
 			Since we have a fixture that can guarantee the keyboard does not have shift or rotation more then a certain amount, we can assume that the feature point matched is the nearest one.
 		\subsubsection{Performance}
 			$$\textrm{Add time data}$$
 		\subsubsection{Pros \& Cons}
 			This method has lowest robustness, but fastest in execution.
-	
+
 	\subsection{SIFT}
 		\subsubsection{Introduction}
+		SIFT feature is proposed by Lowe \cite{lowe2004distinctive} et al., having the state of the art robustness in most scenarios \cite{karami2017image}, but slower than any other methods on execution.
 		\subsubsection{Performance}
 			$$\textrm{Add time data}$$
 		\subsubsection{Pros \& Cons}
 	
 	\subsection{SURF}
 		\subsubsection{Introduction}
+		SURF is a upgrade version based on SIFT, witch is designed to solve the speed issue of SIFT. 
+		And in the scenario of this thesis, this method meets the requirement on the stability without wasting too much time on calculation.
 		\subsubsection{Performance}
 			$$\textrm{Add time data}$$
 		\subsubsection{Pros \& Cons}
+
+	% \subsection{ORB}
+	% 	\subsubsection{Introduction}
+	% 	ORB is a
+	% 	\subsubsection{Performance}
+	% 		$$\textrm{Add time data}$$
+	% 	\subsubsection{Pros \& Cons}
 	
-	\subsection{ORB}
-		\subsubsection{Introduction}
-		\subsubsection{Performance}
-			$$\textrm{Add time data}$$
-		\subsubsection{Pros \& Cons}
-	
-	\subsection{FREAK}
-		\subsubsection{Introduction}
-		\subsubsection{Performance}
-			$$\textrm{Add time data}$$
-		\subsubsection{Pros \& Cons}
+	% \subsection{FREAK }
+	% 	\subsubsection{Introduction}
+	% 	\subsubsection{Performance}
+	% 		$$\textrm{Add time data}$$
+	% 	\subsubsection{Pros \& Cons}
 
 \section{Comparison between each methods}
 \emph{crest a chart here}

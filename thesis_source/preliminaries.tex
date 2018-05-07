@@ -20,7 +20,7 @@ In this section, common techniques of object detection are mentioned. Preprocess
             The conversion method from RGB color model to gray-scale color model built in OpenCV is described as below.
             % https://docs.opencv.org/3.1.0/de/d25/imgproc_color_conversions.html
             \begin{center}
-            $Y = 0.299 \times R + 0.587 \times G + 0.114 \times B $
+            $ Y = 0.299 \times R + 0.587 \times G + 0.114 \times B $
             \end{center}
 
             Here is an example conversion result
@@ -51,10 +51,10 @@ In this section, common techniques of object detection are mentioned. Preprocess
                     {{120+60(B - R)}/{(V-\min(R,G,B))}, \enspace\textrm{if}\enspace V=G}\\
                     {{240+60(R - G)}/{(V-\min(R,G,B))}, \enspace\textrm{if}\enspace V=B}
                 \end{cases}
-            $$\\   
+            $$\\
             $$
                 \textrm{If} \enspace H \enspace < \enspace 0 \textrm{, then } H = H + 360. \textrm{ On output } 0 \leq V \leq 1, 0 \leq S \leq 1, 0 \leq H \leq 360
-            $$
+            $$\\
             $$ \textrm{add HSV filtered example here} $$
 
     \subsection{Thresholding \& Binarization}
