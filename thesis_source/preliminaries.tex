@@ -37,7 +37,9 @@ In this section, common techniques of object detection are mentioned. Preprocess
             $$
                 V = \max(R,G,B)
             $$\\
-            $       {{{(V-min(R,G,B))}/{V}}, \enspace\textrm{if}\enspace V \neq 0}\\
+            $$
+                \begin{cases}   
+                    {{{(V-min(R,G,B))}/{V}}, \enspace\textrm{if}\enspace V \neq 0}\\
                     {0, otherwise}
                 \end{cases}
             $$\\
