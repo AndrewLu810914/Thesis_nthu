@@ -1,6 +1,6 @@
 \chapter{Preliminaries}
 \label{c:preliminaries}
-In this section, common techniques of object detection are mentioned. Preprocessing (thresholding, color model transformation,blob detection) and recognition (feature point detection, and matching) are included. 
+In this section, common techniques of object detection are mentioned. Preprocessing (thresholding, color model transformation,blob detection) and recognition (feature point detection, and matching) are included.
 
 \section{Common Image Processing Techniques}
 
@@ -29,7 +29,7 @@ In this section, common techniques of object detection are mentioned. Preprocess
             The other color model we used was HSV color model, an alternative of RGB color model, this color model describe colors in different way of RGB color model.
             HSV color model use Hue, Saturation and Value to describe different colors.
             This color space could describe different color in a more intuitive way.
-            Hue stands for the color tone of a pixel. % find formal definition
+            Hue is the parameter represent for the color tone of the pixel. % find formal definition
             Saturation stands for how dense the color is. The more pure pixel color is, the higher value saturation will have.
             Value is used to describe how bright the pixel is. The brighter, the higher.
             The conversion method from RGB color model to HSV color model built in OpenCV is described as below.
@@ -37,10 +37,7 @@ In this section, common techniques of object detection are mentioned. Preprocess
             $$
                 V = \max(R,G,B)
             $$\\
-            $$
-                S = 
-                \begin{cases}
-                    {{{(V-min(R,G,B))}/{V}}, \enspace\textrm{if}\enspace V \neq 0}\\
+            $       {{{(V-min(R,G,B))}/{V}}, \enspace\textrm{if}\enspace V \neq 0}\\
                     {0, otherwise}
                 \end{cases}
             $$\\
@@ -73,17 +70,18 @@ In this section, common techniques of object detection are mentioned. Preprocess
         A blob is a group of connected pixels in an image that share some common property (e.g. gray-scale value, HSV value, RGB value, shapes, area, etc).
         The goal of blob detection method is to identify and mark these pixels in the given image.
         In this thesis, after we applied thresholding technique and defect detecting methods to the keyboard image captured from camera and get the corresponding binary image.
-        We apply blob detection to that binary image then get the key position, LED color and defect information from it.
-        $$ \textrm{add example here} $$
+        We apply blob detection to that binary image then get the key position, LED color and defect information from it by apply blob detecting with different binary filters.
+        $$ \textrm{add example here, grayscale thresholding, HSV filtering.....} $$
 
     \subsection{Feature Point Detection}
         Feature point detection technique is widely used in object detection or tracking applications.
         Popular methods like SIFT feature points having the current state of the art accuracy, but its slow on execution.
         SURF is an improve based on SIFT feature point. SURF is much faster then SIFT without sacrificing much robustness. But still takes some time when dealing with large sized image. 
-        However, by restricting the area of interested with correct parameter setting, SURF feature point could be utilized in our project without issue.
+        However, by restricting the area of interested with correct parameter setting, SURF feature point could be utilized in our project.
         Other feature point detecting methods like FAST, ORB and FREAK will also be discussed in Chapter 4.
 
 \section{Related Works} 
+    % Keywords: Planner object detection, Defect detection, AOI system.
     % this part needs more works to do later.
     % each subsection needs more information.
     This section will introduce where the main concept of each component comes from.
