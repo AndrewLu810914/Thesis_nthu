@@ -6,6 +6,22 @@
 	% https://docs.opencv.org/3.3.1/d5/d51/group__features2d__main.html
 	In this section, we'll discuss how different feature point performs in keyboard defect detection scenario.
 	Since the bottleneck of this project is the feature point detection method, we tried some common methods, and below is the observation \& time comparison between different approach.
+	\subsection{Experiment Method}
+		\subsubsection{Problems}
+			We'll discuss the robustness aganest different kinds of interference this system would encountered in production line.
+			The interference most likely happen would be 
+			unexcepted rotate \& translate when the operator put keyboard on the fixture, 
+			LED failure on the main board of keyboard , 
+			lettering defects on the key caps during the production of key caps 
+			and noise from camera.
+		\subsubsection{Methods}
+			We'll simulate the problems just mentioned.\\
+			For unexcepted rotate \& translate, \\
+			For LED failure, \\
+			For lettering defects on the key caps, \\
+			For noise from camera, \\
+
+
 
 	\subsection{Simple Blob Detector}
 		\subsubsection{Introduction}
@@ -14,7 +30,7 @@
 		\subsubsection{Performance}
 			$$\textrm{Add time data}$$
 		\subsubsection{Pros \& Cons}
-			This method has lowest robustness, but fastest in execution.
+			This method has lowest robustness in experiment, but fastest in execution.
 
 	\subsection{SIFT}
 		\subsubsection{Introduction}
@@ -31,18 +47,19 @@
 			$$\textrm{Add time data}$$
 		\subsubsection{Pros \& Cons}
 
-	% \subsection{ORB}
-	% 	\subsubsection{Introduction}
-	% 	ORB is a
-	% 	\subsubsection{Performance}
-	% 		$$\textrm{Add time data}$$
-	% 	\subsubsection{Pros \& Cons}
-	
-	% \subsection{FREAK }
-	% 	\subsubsection{Introduction}
-	% 	\subsubsection{Performance}
-	% 		$$\textrm{Add time data}$$
-	% 	\subsubsection{Pros \& Cons}
+	\subsection{ORB}
+		\subsubsection{Introduction}
+		ORB is a
+		\subsubsection{Performance}
+			$$\textrm{Add time data}$$
+		\subsubsection{Pros \& Cons}
+
+	\subsection{AKAZE}
+		\subsubsection{Introduction}
+		AKAZE is a
+		\subsubsection{Performance}
+			$$\textrm{Add time data}$$
+		\subsubsection{Pros \& Cons}
 
 \section{Comparison between each methods}
 \emph{crest a chart here}

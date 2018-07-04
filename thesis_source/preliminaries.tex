@@ -38,6 +38,7 @@ In this section, common techniques of object detection are mentioned. Preprocess
                 V = \max(R,G,B)
             $$\\
             $$
+                S = 
                 \begin{cases}   
                     {{{(V-min(R,G,B))}/{V}}, \enspace\textrm{if}\enspace V \neq 0}\\
                     {0, otherwise}
@@ -55,7 +56,7 @@ In this section, common techniques of object detection are mentioned. Preprocess
                 \textrm{If} \enspace H \enspace < \enspace 0 \textrm{, then } H = H + 360. \textrm{ On output } 0 \leq V \leq 1, 0 \leq S \leq 1, 0 \leq H \leq 360
             $$\\
             $$ \textrm{add HSV filtered example here} $$
-
+`'
     \subsection{Thresholding \& Binarization}
         Thresholding with different color model can help us select interested pixels in an efficient way.
         In this thesis, we used this idea to identify where the keyboard buttons are located by doing thresholding to the gray scale image.
