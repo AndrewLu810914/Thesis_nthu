@@ -23,8 +23,15 @@ In this section, common techniques of object detection are mentioned. Preprocess
             $ Y = 0.299 \times R + 0.587 \times G + 0.114 \times B $
             \end{center}
 
-            Here is an example conversion result
-            $$ \textrm{add example here} $$
+            Here is an example conversion result.
+            \begin{figure}
+                \includegraphics[width=\linewidth]{grayInput.png}
+                \includegraphics[width=\linewidth]{grayBinaryOutput.png}
+                \caption{Grayscale thresholding example.}
+                \label{fig:thresholding_Example}
+            \end{figure}
+
+
         \subsubsection{HSV Color Model}
             The other color model we used was HSV color model, an alternative of RGB color model, this color model describe colors in different way of RGB color model.
             HSV color model use Hue, Saturation and Value to describe different colors.
@@ -55,7 +62,14 @@ In this section, common techniques of object detection are mentioned. Preprocess
             $$
                 \textrm{If} \enspace H \enspace < \enspace 0 \textrm{, then } H = H + 360. \textrm{ On output } 0 \leq V \leq 1, 0 \leq S \leq 1, 0 \leq H \leq 360
             $$\\
-            $$ \textrm{add HSV filtered example here} $$
+            % \textrm{add HSV filtered example here} 
+            \begin{figure}
+                \includegraphics[width=\linewidth]{hsvRed.png}
+                \includegraphics[width=\linewidth]{hsvGreen.png}
+                \includegraphics[width=\linewidth]{hsvBlue.png}
+                \caption{HSV filtered examples. (RGB color detection)}
+                \label{fig:HSV_Example}
+            \end{figure}
 `'
     \subsection{Thresholding \& Binarization}
         Thresholding with different color model can help us select interested pixels in an efficient way.
