@@ -4,7 +4,7 @@
 \section{Inspection Platform Structure}
 Refer to Kumar's work \cite{kumar2008computer}, we designed a scalable platform could install multiple cameras. Use one PC as host machine to collect images from camera array.
 After retrieved images from camera, the defect detection methods (Lettering Defect Detection \& LED Color inspection) described below will inspect wheather the keyboard has any defect on it. 
-\begin{figure}
+\begin{figure}[H]
 	\includegraphics[width=\linewidth]{SystemStructure.png}
 	\caption{The Diagram of SystemStructure}
 	\label{fig:SystemStructure}
@@ -20,7 +20,7 @@ After retrieved images from camera, the defect detection methods (Lettering Defe
 		Lettering defect detection can be saperated into two main part.
 		The first part is learning stage. This part reads the gold image from file and doing the feature point detection, and store the feature points \& their descriptor for examining stage use.
 
-		\begin{figure}
+		\begin{figure}[H]
 			\includegraphics[width=\linewidth]{LetteringInit.png}
 			\caption{The Diagram of Lettering Initialize Stage}
 			\label{fig:LetteringInit}
@@ -31,7 +31,7 @@ After retrieved images from camera, the defect detection methods (Lettering Defe
 		After having the feature point and descriptor from both gold \& keyboard sample image, we do the feature point matching to find the homography matrix then we can align sample image with gold image with geomatric transformantion. 
 		With both image aligned, we apply the defect detection method to aligned images, and get the marked defect information.
 		And judge the sample keyboard is a defected on or a good one.
-		\begin{figure}
+		\begin{figure}[H]
 			\includegraphics[width=\linewidth]{LetteringInspection.png}
 			\caption{The Diagram of Lettering Inspection Stage}
 			\label{fig:LetteringInspection}
@@ -40,9 +40,28 @@ After retrieved images from camera, the defect detection methods (Lettering Defe
 	\subsection{Defect Detection Method}
 		In lettering defect detection, after gray-scale gold \& smaple image aligned, we calculate absolute difference of two image, and get a new gray scale image, say $M_{Diff}$, that contained defects information.
 		To detect the defect, we could apply simple blob detection with soutable parameters to identify wheather a bright spot is defect or noise.
-		
-		$$ \textrm{add a flow chart here} $$
-		$$ \textrm{add example image of absdiff result after alignment} $$
+		\begin{figure}[H]
+			\includegraphics[width=\linewidth]{DefectDetectionMethod.png}
+			\caption{The Diagram of Defect Detection Method}
+			\label{fig:DefectDetectionMethod}
+		\end{figure}
+		\begin{figure}[H]
+			\subfigure[Aligned Reference Image]
+			{
+				\includegraphics[width=0.33\linewidth]{aligned_reference.png}
+			}
+			
+			\subfigure[Aligned Sample Image]
+			{
+				\includegraphics[width=0.33\linewidth]{aligned_sample.png}
+			}
+			\subfigure[Absolute Difference Result Image]
+			{
+				\includegraphics[width=0.33\linewidth]{abs_diff_result.png}
+			}
+			\caption{Absolute Difference Example}
+			\label{fig:AbsoluteDifferenceResult}
+		\end{figure}
 
 \section{LED Mulfunction Detection Intorduction}
 	In LED function inspection, we want to check if each LED embadded in the circuit of keyboard functions as expect.
@@ -51,7 +70,7 @@ After retrieved images from camera, the defect detection methods (Lettering Defe
 	\subsection{Learning Stage}
 		In this step, we want to build the pass standard with given gold image.
 		By apply corresponding HSV filter, $filter_r, filter_g, filter_b$, to gold images, we can obtain three binary image, witch can use to identify if a testing object funcions as this binary image.
-		\begin{figure}
+		\begin{figure}[H]
 			\includegraphics[width=\linewidth]{LEDInit.png}
 			\caption{The Diagram of LED Initialize Stage}
 			\label{fig:LEDInit}
@@ -61,7 +80,7 @@ After retrieved images from camera, the defect detection methods (Lettering Defe
 		In this step, we are going to check if a testing object functions as the passing standard.
 		We applied same filter, say $filter_c$, on the image captured from camera. And get a binary image of testing object.
 		We compare the blob size and shape between the binary image of gold and sample, to see if there is any mulfunctioning on the LED lights.
-		\begin{figure}
+		\begin{figure}[H]
 			\includegraphics[width=\linewidth]{LEDInspection.png}
 			\caption{The Diagram of LED Inspection Stage}
 			\label{fig:LEDInspection}

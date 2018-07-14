@@ -24,10 +24,16 @@ In this section, common techniques of object detection are mentioned. Preprocess
             \end{center}
 
             Here is an example conversion result.
-            \begin{figure}
-                \includegraphics[width=\linewidth]{grayInput.png}
-                \includegraphics[width=\linewidth]{grayBinaryOutput.png}
-                \caption{Grayscale thresholding example.}
+            \begin{figure}[H]
+                \subfigure[Raw Color Image.]
+                {
+                    \includegraphics[width=0.5\linewidth]{raw_image_color.png}
+                }\\
+                \subfigure[Gray-scale Transform result.]
+                {
+                    \includegraphics[width=0.5\linewidth]{raw_image_gray.png}
+                }
+                \caption{Color to grayscale example.}
                 \label{fig:thresholding_Example}
             \end{figure}
 
@@ -63,14 +69,13 @@ In this section, common techniques of object detection are mentioned. Preprocess
                 \textrm{If} \enspace H \enspace < \enspace 0 \textrm{, then } H = H + 360. \textrm{ On output } 0 \leq V \leq 1, 0 \leq S \leq 1, 0 \leq H \leq 360
             $$\\
             % \textrm{add HSV filtered example here} 
-            \begin{figure}
-                \includegraphics[width=\linewidth]{hsvRed.png}
-                \includegraphics[width=\linewidth]{hsvGreen.png}
-                \includegraphics[width=\linewidth]{hsvBlue.png}
-                \caption{HSV filtered examples. (RGB color detection)}
-                \label{fig:HSV_Example}
+            \begin{figure}[H]
+                \begin{center}
+                    \includegraphics[width=\linewidth/3]{hsv_cone.png}
+                    \caption{HSV color space model.}
+                    \label{fig:HSV_model}
+                \end{center}
             \end{figure}
-`'
     \subsection{Thresholding \& Binarization}
         Thresholding with different color model can help us select interested pixels in an efficient way.
         In this thesis, we used this idea to identify where the keyboard buttons are located by doing thresholding to the gray scale image.
@@ -80,7 +85,31 @@ In this section, common techniques of object detection are mentioned. Preprocess
         By HSV thresholding, we can identify keys with different color lightening.
         Witch is efficient for us to check if the LED back-light is malfunction.
         % add object detection, color detection, shape detection methods.
-        $$ \textrm{add example here} $$
+        \begin{figure}[H]
+            \subfigure[Gray-scale Image Input.]
+            {
+                \includegraphics[width=0.5\linewidth]{grayInput.png}
+            }
+            \subfigure[Binary Image After Thresholding by Brighrness]
+            {
+                \includegraphics[width=0.5\linewidth]{grayBinaryOutput.png}
+            }
+            \caption{Grayscale Thresholding examples.}
+            \label{fig:HSV_detection_Example}
+        \end{figure}
+
+        \begin{figure}[H]
+            \subfigure[Color Image Input.]
+            {
+                \includegraphics[width=0.5\linewidth]{color_fail.png}
+            }
+            \subfigure[Binary Image After Thresholding by HSV filter]
+            {
+                \includegraphics[width=0.5\linewidth]{color_fail_thresholded.png}
+            }
+            \caption{HSV Thresholding examples.}
+            \label{fig:HSV_detection_Example}
+        \end{figure}
 
     \subsection{Blob Detection}
         % https://www.learnopencv.com/blob-detection-using-opencv-python-c/
@@ -88,7 +117,29 @@ In this section, common techniques of object detection are mentioned. Preprocess
         The goal of blob detection method is to identify and mark these pixels in the given image.
         In this thesis, after we applied thresholding technique and defect detecting methods to the keyboard image captured from camera and get the corresponding binary image.
         We apply blob detection to that binary image then get the key position, LED color and defect information from it by apply blob detecting with different binary filters.
-        $$ \textrm{add example here, grayscale thresholding, HSV filtering.....} $$
+        \begin{figure}[H]
+            \centering
+            \subfigure[Red Keys detected.]
+            {
+                \includegraphics[width=\linewidth]{hsvRed.png}
+            }\\
+            \subfigure[Green Keys detected.]
+            {
+                \includegraphics[width=\linewidth]{hsvGreen.png}
+            }\\
+            \subfigure[Blue Keys detected.]
+            {
+                \includegraphics[width=\linewidth]{hsvBlue.png}
+            }
+            \caption{Blob detection with HSV filtered results.}
+            \label{fig:HSV_detection_Example}
+        \end{figure}
+
+        \begin{figure}[H]
+            \includegraphics[width=\linewidth]{gray_output_key_ID.png}
+            \caption{Blob detection with Grayscale filtered results.}
+            \label{fig:BLOB_detection_Example}
+        \end{figure}
 
     \subsection{Feature Point Detection}
         Feature point detection technique is widely used in object detection or tracking applications.

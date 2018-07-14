@@ -1,0 +1,33 @@
+\begin{thebibliography}{1}
+
+\bibitem{putera2010printed}
+S.~I. Putera and Z.~Ibrahim, ``Printed circuit board defect detection using
+  mathematical morphology and matlab image processing tools,'' in {\em
+  Education Technology and Computer (ICETC), 2010 2nd International Conference
+  on}, vol.~5, pp.~V5--359, IEEE, 2010.
+
+\bibitem{kumar2008computer}
+A.~Kumar, ``Computer-vision-based fabric defect detection: A survey,'' {\em
+  IEEE transactions on industrial electronics}, vol.~55, no.~1, pp.~348--363,
+  2008.
+
+\bibitem{ECC_Alignment}
+S.~Mallick, ``Image alignment (ecc) in opencv ( c++ / python ).''
+  \url{https://www.learnopencv.com/image-alignment-ecc-in-opencv-c-python/}.
+\newblock Accessed:JULY 1, 2015.
+
+\bibitem{featureBasedAlignment}
+S.~Mallick, ``Image alignment (feature based) using opencv (c++/python).''
+  \url{https://www.learnopencv.com/image-alignment-feature-based-using-opencv-c-python/}.
+\newblock Accessed:MARCH 11, 2018.
+
+\bibitem{lowe2004distinctive}
+D.~G. Lowe, ``Distinctive image features from scale-invariant keypoints,'' {\em
+  International journal of computer vision}, vol.~60, no.~2, pp.~91--110, 2004.
+
+\bibitem{karami2017image}
+E.~Karami, S.~Prasad, and M.~Shehata, ``Image matching using sift, surf, brief
+  and orb: Performance comparison for distorted images,'' {\em arXiv preprint
+  arXiv:1710.02726}, 2017.
+
+\end{thebibliography}
