@@ -3,8 +3,11 @@
 
 \section{Conclusions}
 	In this thesis, we have discussed the performance bottleneck of the inspection methods and improved the inspection methods.
-	Thought the current implementation solved the performance issue of the previous solution, increased the accuracy and precision of the judgment.
-	The implementation doesn't consider the case of conventional keyboards, also doesn't optimized or parallel computing.
+	By the experiment \& comparision, we found that both SIFT \& SURF feature point detector have very good robustness.
+	Thought AKAZE have slightly benefit on time efficiency then SURF, the complexity of paraneter setting and robustness doesn't meet the production lines requirment.
+
+ 	The current implementation solved the performance issue of the previous solution, increased the accuracy and precision of the judgment by redesigning the inspection process.
+	But this implementation doesn't consider the case of conventional (non-iluminated) keyboards, also doesn't utilized any parallel computing techniques.
 	We will discuss about the future work in the following section.
 
 \section{Future Works}
@@ -24,4 +27,6 @@
 		With good implementation, GPU may make the real time inspection possible.
 	
 	\subsection{Smarter Algorithm}
-		In current implementation, we still need to setup up to ten parameters manually, 
+		In current implementation, we still need to setup up to ten parameters manually.
+		And the current implementation is still sensetive to the imput image source and inspection sample properties.
+		Thus a smarter methods considering more delicate condition is required in the future.
