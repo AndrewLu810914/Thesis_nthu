@@ -1,18 +1,28 @@
 \begin{abstractzh}
-在工業檢測的場合中，自動化影像辨識(AOI)技術日漸成為一個重要的應用，
-而現成的影像處理軟體通常有授權費過高，且準確度與分析速度並不符合產線的預算與需求，
-這份論文中，我們用開源的工具實作了一個低成本的解決方案，滿足產線對於分析速度的需求。
-本研究所實作出的產品檢驗流程可以粗略分為兩步驟，
-第一步驟為樣板設定，此步驟會紀錄標準的產品特徵；
-第二步驟為樣本檢驗，此步驟會將樣本與第一步驟所記錄下的樣本進行比對，並判斷此背光鍵盤是否有瑕疵或故障。
-本論文主要討論自動化光學檢測系統及分析演算法的設計架構與分析過程中的演算法比較並加以改良。
-並在最後將嘗試過的各種方法以產線實際運作的標準下進行比較。
+在工業檢測的場合中，自動化影像辨識(AOI)技術是一種常見的應用，
+而現成的影像處理軟體與設備通常有授權費與設置成本過高，並且缺乏日後修改的彈性，且準確度與分析速度並不符合產線的預算與需求，
+這份論文中，我們與羅技電子合作以OpenCV為基礎重新設計了檢測方法，利用多台網路攝影機取代工業級攝影機實作了一個低成本的解決方案。
+本研究所實作出的產品檢驗流程可以用來檢測背光鍵盤的刻字以及燈光顏色是否符合出貨標準。\\
+檢測流程可以粗略分為兩步驟，
+第一步驟為標準設定，此步驟會輸入一張符合出貨標準的產品影像，紀錄特徵，例如刻字的形狀與LED燈色的標準，並在輸入的影像中標記SURF特徵點；
+第二步驟為樣本檢驗，此步驟會使用SURF特徵點與FLANN演算法，將樣本與第一步驟所記錄下的標準影像進行對齊(Alignment)與瑕疵檢測(Defect Detection)，並判斷此背光鍵盤樣本是否有瑕疵或故障。
+詳細的流程將會在第三章進行介紹。\\
+本論文將在第四章比較應用於此自動化光學檢測系統的特徵點演算法，並在最後針對各種產線上可能的的干擾進行模擬測試，並選出一個適合的演算法投入產線使用。\\
+在第五章，我們將會對目前實作的成果進行總結並提出未來展望。
 
 \end{abstractzh}
 
 \begin{abstracten}
-In the industrial production site, Automatic-Optics-Inspection (AOI) techniques has become an importent application.
-Since the existing image processing software is not cost effective due to expensive licence fee, 
-and doesn't meet the requirment of on speed and accuracy. 
-In this thesis, we proposed a low cost solution implemented with open source tools.
+In the application of product inspection and quality control, automatic optical inspection (AOI) is an common application.
+But with the ready-made AOI softwares and instrements, comes the higher deployment cost and less flexibility when the requirments are changed, Also, the accuracy and inspection time doesn't meet the need for the production site.
+In this thesis, we cooperate with Logitech, redesigned a AOI solution based on OpenCV.
+We utilized multiple webcams to replace expensive industrial camera, constructed a lower cost solution.
+The AOI system will be disscussed in the thesis is designed to inspect the letterring quality \& color of LED back light of the keyboards from Logitech. To see wheather the product meets the shipping standard or not.\\
+The inspection process can roughly devide into two main parts, the standard setup phase and the inspection phase.
+In the first phase, standard setup phase, we'll input an image (reference image) of good product that meets shipping standard, then record all the information required for the inspection phase, like the lettering shape and LED colors, and do the SURF feature point detection on the reference image.
+In the second phase, inspection phase, we'll input an image (sample image) of uninspected sample, apply SURF feature point detection on the image and align the sample image with reference image. Then we'll apply the defect detection methods to see wheather this sample having any defect or not.
+The detailed methods would be introduced in Ch.3.\\
+In the Ch.4, we'll compare the different feature point detection methods, and design an experiment to simulate the possible interference, than choose a best feature point detector for our application.\\
+In the Ch.5, we'll made conclusions and future works for the current system implementation. 
+
 \end{abstracten}
