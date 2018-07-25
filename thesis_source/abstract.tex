@@ -14,13 +14,13 @@
 
 \begin{abstracten}
 In the application of product inspection and quality control, automatic optical inspection (AOI) is an common application.
-But with the ready-made AOI softwares and instrements, comes the higher deployment cost and less flexibility when the requirments are changed, Also, the accuracy and inspection time doesn't meet the need for the production site.
+But with the ready-made AOI softwares and instruments, comes the higher deployment cost and less flexibility when the requirements are changed, Also, the accuracy and inspection time doesn't meet the need for the production site.
 In this thesis, we cooperate with Logitech, redesigned a AOI solution based on OpenCV.
-We utilized multiple webcams to replace expensive industrial camera, constructed a lower cost solution.
-The AOI system will be disscussed in the thesis is designed to inspect the letterring quality \& color of LED back light of the keyboards from Logitech. To see wheather the product meets the shipping standard or not.\\
-The inspection process can roughly devide into two main parts, the standard setup phase and the inspection phase.
+We utilized multiple web-cams to replace expensive industrial camera, constructed a lower cost solution.
+The AOI system will be discussed in the thesis is designed to inspect the lettering quality \& color of LED back light of the keyboards from Logitech. To see whether the product meets the shipping standard or not.\\
+The inspection process can roughly divide into two main parts, the standard setup phase and the inspection phase.
 In the first phase, standard setup phase, we'll input an image (reference image) of good product that meets shipping standard, then record all the information required for the inspection phase, like the lettering shape and LED colors, and do the SURF feature point detection on the reference image.
-In the second phase, inspection phase, we'll input an image (sample image) of uninspected sample, apply SURF feature point detection on the image and align the sample image with reference image. Then we'll apply the defect detection methods to see wheather this sample having any defect or not.
+In the second phase, inspection phase, we'll input an image (sample image) of inspection sample, apply SURF feature point detection on the image and align the sample image with reference image. Then we'll apply the defect detection methods to see whether this sample having any defect or not.
 The detailed methods would be introduced in Ch.3.\\
 In the Ch.4, we'll compare the different feature point detection methods, and design an experiment to simulate the possible interference, than choose a best feature point detector for our application.\\
 In the Ch.5, we'll made conclusions and future works for the current system implementation. 
